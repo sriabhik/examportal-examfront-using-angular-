@@ -1,0 +1,85 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class ="row">
+            <div class="col-md-6 offset-md-3">
+                <div class ="container ">
+                    <img  style ="height: 100px; width: 300px;margin-top: 20px;margin-left: 105px;"src="../../../assets/logo.png" alt="image.png">
+                </div>
+                <h1 class="text-center"><strong>Register Here</strong></h1>
+                <!-- {{user|json}} -->
+                <form (ngSubmit)="formSubmit()">
+                    <!-- username field -->
+                    <mat-form-field class ="full-width" appearance="outline">
+                        <mat-label>User Name</mat-label>
+                        <input required type="text" [(ngModel)]="user.username" 
+                        name="username" 
+                        matInput placeholder="Enter UserName">
+                        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                        <mat-hint>username must be unique</mat-hint>
+                      </mat-form-field>
+
+                       <!-- password field -->
+                    <mat-form-field class ="full-width" appearance="outline">
+                        <mat-label>User Password</mat-label>
+                        <input required type= "password"  
+                        [(ngModel)]="user.password"
+                        name ="password"
+                        matInput placeholder="Enter Password">
+                        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                        <!-- <mat-hint>Hint</mat-hint> -->
+                      </mat-form-field>
+
+                       <!-- first field -->
+                    <mat-form-field class ="full-width" appearance="outline">
+                        <mat-label>First Name</mat-label>
+                        <input required  type="text" 
+                        [(ngModel)]="user.firstname"
+                        name ="firstname"
+                        matInput placeholder="Enter firstname">
+                        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                        <!-- <mat-hint>Hint</mat-hint> -->
+                      </mat-form-field>
+
+                       <!-- Last field -->
+                    <mat-form-field class ="full-width" appearance="outline">
+                        <mat-label>Last Name</mat-label>
+                        <input required  type = "text"  
+                        [(ngModel)]="user.lastname"
+                        name ="lastname"
+                        matInput placeholder="Enter lastname">
+                        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                        <!-- <mat-hint>Hint</mat-hint> -->
+                      </mat-form-field>
+
+                       <!-- email field -->
+                    <mat-form-field class ="full-width" appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input required  type="email" 
+                        [(ngModel)]="user.email"
+                        name ="email"
+                        matInput placeholder="Enter Email">
+                        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                        <!-- <mat-hint>Hint</mat-hint> -->
+                      </mat-form-field>
+
+                       <!-- phone field -->
+                    <mat-form-field class ="full-width" appearance="outline">
+                        <mat-label>Phone</mat-label>
+                        <input required  type ="number" 
+                        [(ngModel)]="user.phone"
+                        name ="phone"
+                        matInput placeholder="Enter Phone Number">
+                        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                        <!-- <mat-hint>Hint</mat-hint> -->
+                      </mat-form-field>
+                      <div class="container text-center">
+                          <button type="submit" mat-raised-button color="primary">Register</button>
+                          &nbsp;&nbsp;
+                          <button type="reset"mat-raised-button color="accent">Reset</button>
+                      </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
