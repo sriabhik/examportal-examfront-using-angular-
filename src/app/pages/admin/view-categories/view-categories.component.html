@@ -7,12 +7,12 @@
                     <mat-icon mat-list-icon>category</mat-icon>
                     <div mat-line>{{c.title}}</div>
                     <div mat-line>{{c.description}}</div>
-                    <div mat-line>{{c.cid}}</div>
+                    
                     <mat-divider></mat-divider>
                 </mat-list-item>
             </mat-list>
             <div class="container text-center mt20">
-                <button mat-raised-button color="accent">Add New category</button>
+                <button routerLink="/admin/add-category" mat-raised-button color="accent">Add New category</button>
             </div>
           
         </mat-card>
