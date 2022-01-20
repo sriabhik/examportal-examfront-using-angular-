@@ -1,18 +1,46 @@
 <mat-card>
-    <h1>Your Profile</h1>
-    
-    <div class="bootstrap-wrapper">
-        <div class="container">
-            <div class="container text-center">
-                <img class ="profile-image" src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png" alt="image.png">
-                <h1>Abhishek Srivastava</h1>
-            </div>
-            
-            <div class="row">
-                <div class ="col-md-10 offset-md-1">
-                    <!-- table details -->
+    <mat-card-content>
+        <h1>Your Profile</h1> 
+        <!-- {{user|json}} -->
+        <div class="bootstrap-wrapper">
+            <div class="container">
+                <div class="container text-center">
+                    <img class ="profile-image" src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png" alt="image.png">
+                    <h1>{{user.firstname}}{{user.lastname}}</h1>
+                </div>
+                
+                <div class="row">
+                    <div class ="col-md-10 offset-md-1">
+                        <!-- table details -->
+                        <table class = "table text-center">
+                            <tr>
+                                <td>UserName</td>
+                                <td>{{user.username}}</td>
+                            </tr>
+                            <tr>
+                                <td>UserId</td>
+                                <td>{{user.id}}</td>
+                            </tr>
+                            <tr>
+                                <td>Phone</td>
+                                <td>{{user.phone}}</td>
+                            </tr>
+                            <tr>
+                                <td>Role</td>
+                                <td>{{user.authorities[0].authority}}</td>
+                            </tr>
+                            <tr>
+                                <td>Status</td>
+                                <td>{{user.enabled?"Active":"InActive"}}</td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </mat-card-content>
+    <mat-card-actions class ="text-center">
+        <button mat-raised-button color="primary">UPDATE</button>
+        <button mat-raised-button color="accent">SHARE</button>
+    </mat-card-actions>
 </mat-card>

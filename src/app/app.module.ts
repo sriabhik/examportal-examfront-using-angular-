@@ -26,6 +26,9 @@ import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboa
 import { ProfileComponent } from './pages/profile/profile.component';
 import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
+
+import { ViewCategoriesComponent } from './pages/admin/view-categories/view-categories.component';
+import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +41,10 @@ import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
     UserDashboardComponent,
     ProfileComponent,
     SidebarComponent,
-    WelcomeComponent
+    WelcomeComponent,
+   
+    ViewCategoriesComponent,
+        AddCategoryComponent
   ],
   imports: [
     BrowserModule,

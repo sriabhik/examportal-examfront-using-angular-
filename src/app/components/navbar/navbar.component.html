@@ -33,7 +33,9 @@
     <!-- diaplying details of login -->
     <a     
     *ngIf="isLoggedIn && user"
-     class="example-icon favorite-icon " 
+    class="example-icon favorite-icon " 
+    mat-button
+    routerLink="/admin/profile"
     aria-label="Example icon-button with heart icon">
      {{login.getUser().username}}
     </a>
