@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { QuestionService } from 'src/app/services/question.service';
 import Swal from 'sweetalert2';
@@ -9,11 +10,12 @@ import Swal from 'sweetalert2';
   styleUrls: ['./view-quiz-questions.component.css']
 })
 export class ViewQuizQuestionsComponent implements OnInit {
-
+  
   qId:any;
   qTitle:any;
   questions = [
   {
+    quesId:'',
     content:'',
     option1:'',
     option2:'',
@@ -25,7 +27,8 @@ export class ViewQuizQuestionsComponent implements OnInit {
 ]
   constructor(
     private _route:ActivatedRoute,
-    private _question:QuestionService
+    private _question:QuestionService,
+    private _snake: MatSnackBar
     ) { }
 
   ngOnInit(): void {
@@ -43,5 +46,23 @@ export class ViewQuizQuestionsComponent implements OnInit {
       
     })
   }
-
+deleteQuestion(qid:any){
+    Swal.fire({
+      icon:'info',
+      showCancelButton:true,
+      confirmButtonText:'Delete',
+      title:'Are you sure?'
+    }).then((e)=>{
+      if(e.isConfirmed){
+        this._question.deleteQuestion(qid).subscribe((success)=>{
+          this._snake.open("Question Deleted Successfully","Cancel",{duration:2000})
+          this.questions = this.questions.filter((q)=> q.quesId != qid)
+        },(error)=>{
+          Swal.fire("Error","Something Went Wrong","error")
+        });
+        
+      }
+    })
+    
+  }
 }

@@ -28,9 +28,10 @@
             <mat-icon mat-list-icon>add</mat-icon>
                Add Quizzes
         </button>
-        <button mat-list-item routerLink="/admin/profile">
+       
+        <a mat-list-item (click)="logout()" >
             <mat-icon mat-list-icon>logout</mat-icon>
-             Logout
-        </button>
+             LogOut
+        </a>
     </mat-action-list>
 </mat-card>

@@ -1,0 +1,10 @@
+.truncate {
+    width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .example-header-image {
+    background-image: url('../../../../assets/circle.png');
+    background-size: cover;
+  }

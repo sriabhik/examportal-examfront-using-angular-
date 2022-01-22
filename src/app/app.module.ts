@@ -35,8 +35,13 @@ import { ViewQuizzesComponent } from './pages/admin/view-quizzes/view-quizzes.co
 import { AddQuizComponent } from './pages/admin/add-quiz/add-quiz.component';
 import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.component';
 import { ViewQuizQuestionsComponent } from './pages/admin/view-quiz-questions/view-quiz-questions.component';
+import { AddQuestionComponent } from './pages/admin/add-question/add-question.component';
+import { UserSidebarComponent } from './pages/user/user-sidebar/user-sidebar.component';
+import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
 @NgModule({
+ 
   declarations: [
+    
     AppComponent,
     NavbarComponent,
     FooterComponent,
@@ -48,15 +53,20 @@ import { ViewQuizQuestionsComponent } from './pages/admin/view-quiz-questions/vi
     ProfileComponent,
     SidebarComponent,
     WelcomeComponent,
-   
+
     ViewCategoriesComponent,
-        AddCategoryComponent,
-        ViewQuizzesComponent,
-        AddQuizComponent,
-        UpdateQuizComponent,
-        ViewQuizQuestionsComponent
+    AddCategoryComponent,
+    ViewQuizzesComponent,
+    AddQuizComponent,
+    UpdateQuizComponent,
+    ViewQuizQuestionsComponent,
+    AddQuestionComponent,
+    UserSidebarComponent,
+    LoadQuizComponent
+       
   ],
   imports: [
+  
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -71,7 +81,8 @@ import { ViewQuizQuestionsComponent } from './pages/admin/view-quiz-questions/vi
     MatIconModule,
     MatListModule,
     MatSlideToggleModule,
-    MatSelectModule
+    MatSelectModule,
+    
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
