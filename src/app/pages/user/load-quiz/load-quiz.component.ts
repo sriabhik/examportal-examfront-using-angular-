@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Route, RouterLink } from '@angular/router';
 import { QuizService } from 'src/app/services/quiz.service';
 import Swal from 'sweetalert2';
 
@@ -12,15 +12,16 @@ export class LoadQuizComponent implements OnInit {
   
   catId:any
   quiz:any
-  constructor(private _route:ActivatedRoute,private _quiz:QuizService) { }
+  constructor(
+            private _route:ActivatedRoute,
+            private _quiz:QuizService) { }
 
   ngOnInit(): void {
  
     this._route.params.subscribe((params)=>{
       this.catId = params['catId']
-    })
-
-    if(this.catId==0){
+      console.log(params);
+      if(this.catId==0){
         this._quiz.quizzes().subscribe((data:any)=>{
           this.quiz = data
           console.log(this.catId);
@@ -29,11 +30,24 @@ export class LoadQuizComponent implements OnInit {
           Swal.fire("error","Something Went Wrong","error")
         })
     }
+    else if(this.catId =='welcome'){
+       
+    }
     else{
         console.log(this.catId);
-        alert(this.catId)
-        this.quiz=[]
+        this._quiz.getQuizzesOfCategory(this.catId).subscribe((data:any)=>{
+          this.quiz = data;
+        },(error)=>{
+          Swal.fire("error","Seomthing went Wrong","error")
+          return;
+        })
+       
+        
+        
     }
+    })
+
+    
   }
 
 }

@@ -1,0 +1,59 @@
+<div class ="bootstrap-wrapper">
+    <div class="container">
+     
+            <div class="row">
+                <div class="col-md-12 mt20" >    
+                    <mat-card class="example-card">
+                       
+                        <mat-card-header>
+                            <h1> <strong>Read  All The Instructions</strong> </h1>
+                        </mat-card-header>
+
+                        <br>
+
+                        <mat-card-content class ="ml20">
+                            
+                        <h1><b>{{quiz.title}}</b></h1>
+                        <p>{{quiz.description}}</p>
+                        <mat-divider> </mat-divider>
+                            <br>
+                            <h1>Important Instructions</h1>
+                       
+                        </mat-card-content>
+
+                        <ul>
+                            <li>
+                                This Quiz is only for practice purpose.
+                            </li>
+
+                            <li>
+                                Read all the Question Carefully.
+                            </li>
+                            <li>
+                                <b>Number of Question :: {{quiz.numberOfQuestions}}
+                                </b>                            
+                            </li>
+                            <li>
+                               <b>Time for this Quiz is ::  {{quiz.numberOfQuestions*2}} min</b>
+                            </li>
+
+                          
+                       
+                            
+                        </ul>
+                        <div class="container text-center">
+                            <mat-card-actions>
+                                <button (click)="startQuiz()"
+                                        mat-raised-button 
+                                        color="primary">Start Quiz
+                                </button>
+                            </mat-card-actions>
+                        </div>
+                        
+                        
+                    
+                    </mat-card>   
+                </div>
+            </div>
+    </div>
+</div>
