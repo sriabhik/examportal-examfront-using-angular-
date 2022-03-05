@@ -23,7 +23,7 @@ public getCurrentUser(){
   public loginUser(token:any){
     //in this way we store token from retun value from backend
     localStorage.setItem('token',token);
-    return true;
+    return true ;
   }
 
   //isLogin:user is login or not
@@ -53,7 +53,6 @@ public getCurrentUser(){
   }
 
   //get User
-
   public getUser(){
     let userStr = localStorage.getItem('user');
     if(userStr!=null){

@@ -6,10 +6,12 @@ import baseUrl from './helper';
   providedIn: 'root'
 })
 export class UserService {
-
+  
+//import HttpClientModule in app.module.ts
   constructor(private http:HttpClient) { }
 
   //add user
+  
   public addUser(user:any){
     return this.http.post(`${baseUrl}/user/`,user);
   }

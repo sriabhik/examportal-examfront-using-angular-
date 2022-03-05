@@ -50,13 +50,7 @@ export class ViewQuizzesComponent implements OnInit {
       }
     })
 
-    // this._quiz.deleteQuiz(qid).subscribe((success)=>{
-    //   //filter quiz which is deleted,and quizzes is there in quizzzes already
-    //   this.quizzes = this.quizzes.filter((quiz)=>quiz.qid != qid);
-    //   Swal.fire("Success","Quiz Deleted","success")
-    // },(error)=>{
-    //   Swal.fire("Error","Something Went Wrong","error")
-    // })
+   
   }
 
 }

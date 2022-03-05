@@ -22,7 +22,7 @@ export class LoadQuizComponent implements OnInit {
       this.catId = params['catId']
       console.log(params);
       if(this.catId==0){
-        this._quiz.quizzes().subscribe((data:any)=>{
+        this._quiz.getActiveQuizzes().subscribe((data:any)=>{
           this.quiz = data
           console.log(this.catId);
           
@@ -35,10 +35,10 @@ export class LoadQuizComponent implements OnInit {
     }
     else{
         console.log(this.catId);
-        this._quiz.getQuizzesOfCategory(this.catId).subscribe((data:any)=>{
+        this._quiz.getActiveQuizzesOfCategory(this.catId).subscribe((data:any)=>{
           this.quiz = data;
         },(error)=>{
-          Swal.fire("error","Seomthing went Wrong","error")
+          Swal.fire("error","Somthing went Wrong","error")
           return;
         })
        

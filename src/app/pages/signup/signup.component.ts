@@ -29,7 +29,7 @@ export class SignupComponent implements OnInit {
       Swal.fire('Oops!! UserName Required','Enter Username')
         return;
     }
-    //addUser : userService
+    //addUser : userService 
     this.userService.addUser(this.user).subscribe(
       (data)=>{
         //success

@@ -22,4 +22,8 @@ export class QuestionService {
   public deleteQuestion(questionId:any){
     return this._http.delete(`${baseUrl}/question/${questionId}`)
   }
+  //get all quiz
+  public getQuestionOfQuizForTest(qId:any){
+    return this._http.get(`${baseUrl}/question/quiz/${qId}`)
+}  
 }
